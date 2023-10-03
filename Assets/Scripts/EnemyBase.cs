@@ -7,6 +7,7 @@ public class EnemyBase : MonoBehaviour
     protected Player player;
     protected Rigidbody2D rb;
     public float test;
+    public static GameManager gameManager; //надо обозначить тип
 
     // Start is called before the first frame update
     public virtual void Start()
@@ -29,6 +30,7 @@ public class EnemyBase : MonoBehaviour
         if (collision.name == "Player")
         {
             Debug.Log("Hit!");
+            gameManager.EndGame();
             return;
         }
     }

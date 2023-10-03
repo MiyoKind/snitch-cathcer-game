@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public ParallaxController parallaxController;
     public static GameManager gameManager;
     public GameObject startMenu;
     public GameObject gameplayMenu;
@@ -15,6 +16,7 @@ public class GameManager : MonoBehaviour
     Border upperBorder;
     public Hold but;
     public int money;
+    public GameObject endMenu;
 
     private void Awake()
     {
@@ -27,16 +29,21 @@ public class GameManager : MonoBehaviour
         lowerBorder = Border.lowerBorder;
         upperBorder = Border.upperBorder;
         Time.timeScale = 0;
-        Invoke("StartGame", 5);
     }
 
     public void StartGame()
     {
         Debug.Log("Hui");
         Time.timeScale = 1;
-        player.StartMoving();
+        //player.StartMoving();
         startMenu.SetActive(false);
         gameplayMenu.SetActive(true);
+    }
+
+    public void EndGame()
+    {
+        endMenu.SetActive(true); 
+        parallaxController.parallaxSpeed = 0;
     }
 
     public void RestartGame()
