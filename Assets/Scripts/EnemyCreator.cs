@@ -9,8 +9,11 @@ public class EnemyCreator : MonoBehaviour
     public GameObject enemy;
     public GameObject enemyStatic;
     public GameObject coin;
+    public GameObject figure;
     public float moveDelta;
     public float coinInterval;
+    
+
     private void Awake()
     {
         if (enemyCreator == null)
@@ -25,6 +28,7 @@ public class EnemyCreator : MonoBehaviour
         InvokeRepeating("SpawnEnemy", 0, 3);
         InvokeRepeating("SpawnStaticEnemy", 7, 7);
         InvokeRepeating("SpawnCoins", 10, 10);
+        InvokeRepeating("SpawnFigureCoins", 2, 2);
     }
 
     public void MoveWithPlayer()
@@ -59,5 +63,13 @@ public class EnemyCreator : MonoBehaviour
             GameObject newCoin = GameObject.Instantiate(coin);
             newCoin.transform.position = camPos + Vector3.right * i * coinInterval;
         }
+    }
+
+    public void SpawnFigureCoins()
+    {
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0.6f * Screen.height, 0));
+        camPos.z = 0;
+        GameObject newFigureCoin = GameObject.Instantiate(figure);
+        newFigureCoin.transform.position = camPos + Vector3.right * 5;
     }
 }

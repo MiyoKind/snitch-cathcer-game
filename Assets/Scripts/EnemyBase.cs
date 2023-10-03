@@ -30,7 +30,7 @@ public class EnemyBase : MonoBehaviour
         if (collision.name == "Player")
         {
             Debug.Log("Hit!");
-            gameManager.EndGame();
+            //gameManager.EndGame();
             return;
         }
     }
