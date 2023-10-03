@@ -14,6 +14,6 @@ public class DistanceText : MonoBehaviour
 
     void Update()
     {
-        t.text = "Distance: " + (int)Player.player.transform.position.x + " m";
+        t.text = "Расстояние пройдено: " + (int)Player.player.transform.position.x + " м";
     }
 }
