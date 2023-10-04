@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Animations;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -12,7 +11,7 @@ public class Player : MonoBehaviour
     public float accel;
 
     public Sprite[] playerSprites;
-    public AnimatorController[] playerControllers;
+    public RuntimeAnimatorController[] playerControllers;
 
     public Rigidbody2D rb;
 
