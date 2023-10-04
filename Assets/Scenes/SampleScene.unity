@@ -2312,7 +2312,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0.238, y: 1}
-  m_AnchoredPosition: {x: -0.9104004, y: 50.17224}
+  m_AnchoredPosition: {x: -0.9104004, y: 50.172226}
   m_SizeDelta: {x: -0.7031555, y: -100.400604}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &313213761
@@ -7551,7 +7551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.020611113, y: 0.87100005}
   m_AnchorMax: {x: 0.26200002, y: 0.9874846}
-  m_AnchoredPosition: {x: 4.3703613, y: -8.029297}
+  m_AnchoredPosition: {x: 4.370117, y: -8.029297}
   m_SizeDelta: {x: 8.822876, y: 42.058}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &766517131
@@ -8974,7 +8974,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.3176108, y: 0.275}
   m_AnchorMax: {x: 0.68238926, y: 0.44711632}
-  m_AnchoredPosition: {x: -0.5, y: 1.9998474}
+  m_AnchoredPosition: {x: -0.5, y: 1.9998779}
   m_SizeDelta: {x: 13, y: 14}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &897226283
@@ -10177,7 +10177,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 4.032959, y: -2.714096}
+  m_AnchoredPosition: {x: 4.032959, y: -2.7141113}
   m_SizeDelta: {x: -67.01416, y: -40.958344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1011131988
@@ -20065,7 +20065,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1.9599609, y: -2.714096}
+  m_AnchoredPosition: {x: -1.9599609, y: -2.7141113}
   m_SizeDelta: {x: -67.304504, y: -40.958344}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1832518429
@@ -23479,6 +23479,18 @@ MonoBehaviour:
   - {fileID: 4553191949585090585, guid: 19bf8c725e1b41f498d930cb4573c19b, type: 3}
   - {fileID: 4939274946506302270, guid: 5ea278fc8058c774ab1cd6aadd264410, type: 3}
   - {fileID: 1835304720724413205, guid: 71d11b8a67f11f44895f4cf741860336, type: 3}
+  - {fileID: 9039013950120113846, guid: fbe63cd035fa3704aa30d0d9289ae495, type: 3}
+  - {fileID: 4310066107346151573, guid: c3b500c742715654caa02dd8f4ae6b3a, type: 3}
+  - {fileID: 6393060554993696501, guid: a0d7137df0db7ba4388183a22c11c926, type: 3}
+  - {fileID: 4374555352442085522, guid: 693ccb48e78e93d44b78a991e43b797e, type: 3}
+  - {fileID: 6596959743537679164, guid: e431e298953926e45b025f37ea05846c, type: 3}
+  - {fileID: 6015082054554758640, guid: ac15fffe0d691b046a78ea0361112cfa, type: 3}
+  - {fileID: 4797777603096421323, guid: 6d27f2b29b43eb04d81ce57104a3d9be, type: 3}
+  - {fileID: 240045949103437127, guid: 4eeafdd71b45ee34d82598e923d60bbe, type: 3}
+  - {fileID: 5129391561364885494, guid: 985d6d0d0996ac94e9baeae97fa4d4e4, type: 3}
+  - {fileID: 5127898330397900022, guid: e6d987f0f76f638408bcc4e5a5629d5c, type: 3}
+  - {fileID: 9034920033599678005, guid: d3807878fd965c84c91cf4f5f5dc3646, type: 3}
+  - {fileID: 5054397519438086482, guid: 7e98a856476341144935859314eb9f13, type: 3}
   moveDelta: 5
   coinInterval: 1
 --- !u!4 &2131380075

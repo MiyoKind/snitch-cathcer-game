@@ -68,7 +68,7 @@ public class EnemyCreator : MonoBehaviour
     {
         float c = Random.value;// Random.Range(0f, 1f);
         Debug.Log(c);
-        if (c > 0.8f)
+        if (c > 0.6f)
         {
             float h = Random.Range(0.6f, 0.75f);
             Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, h * Screen.height, 0));
@@ -81,7 +81,7 @@ public class EnemyCreator : MonoBehaviour
                 newFigureCoin.transform.position = camPos + Vector3.right * 5;
             }
         }
-        else if ((0.8f >= c) && (c > 0.2f))
+        else if ((0.6f >= c) && (c > 0.2f))
         {
             int amount = Random.Range(3, 10);
             Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Random.Range(0.1f, 0.9f) * Screen.height, 0));

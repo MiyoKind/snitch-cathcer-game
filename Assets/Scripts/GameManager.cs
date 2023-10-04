@@ -36,7 +36,6 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("Hui");
         Time.timeScale = 1;
         //player.StartMoving();
         startMenu.SetActive(false);
