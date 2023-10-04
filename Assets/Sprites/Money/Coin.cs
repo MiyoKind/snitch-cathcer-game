@@ -10,9 +10,9 @@ public class Coin : EnemyBase
     {
         if (collision.name == "Player")
         {
-            GameManager.gameManager.money += 1;
+            GameManager.gameManager.runMoney += 1;
             Destroy(gameObject);
-            GameObject.Find("MoneyAmount").GetComponent<TextMeshProUGUI>().text = "Money: " + GameManager.gameManager.money;
+            GameObject.Find("RunMoneyAmount").GetComponent<TextMeshProUGUI>().text = "Галлеонов собрано: " + GameManager.gameManager.runMoney;
         }
     }
 }

@@ -9,7 +9,7 @@ using System.IO;
 public class SaveSystem : MonoBehaviour
 {
     int money;
-    SaveSystem ss;
+    public static SaveSystem ss;
 
     private void Awake()
     {
@@ -22,12 +22,14 @@ public class SaveSystem : MonoBehaviour
           + "/MySaveData.dat");
         SaveData data = new SaveData();
         data.savedMoney = GameManager.gameManager.money;
+        data.record = GameManager.gameManager.record;
+        data.currentSkin = GameManager.gameManager.currentSkin;
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Game data saved!");
     }
 
-    void LoadGame()
+    public void LoadGame()
     {
         if (File.Exists(Application.persistentDataPath
           + "/MySaveData.dat"))
@@ -39,6 +41,8 @@ public class SaveSystem : MonoBehaviour
             SaveData data = (SaveData)bf.Deserialize(file);
             file.Close();
             GameManager.gameManager.money = data.savedMoney;
+            GameManager.gameManager.record = data.record;
+            GameManager.gameManager.currentSkin = data.currentSkin;
             Debug.Log("Game data loaded!");
         }
         else
@@ -50,4 +54,6 @@ public class SaveSystem : MonoBehaviour
 class SaveData
 {
     public int savedMoney;
+    public int record;
+    public int currentSkin;
 }

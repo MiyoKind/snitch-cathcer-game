@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,6 +10,9 @@ public class Player : MonoBehaviour
     public float jumpSpeed;
     public float maxSpeed;
     public float accel;
+
+    public Sprite[] playerSprites;
+    public AnimatorController[] playerControllers;
 
     public Rigidbody2D rb;
 
@@ -48,5 +52,13 @@ public class Player : MonoBehaviour
         {
             rb.velocity = new Vector2(rb.velocity.x, maxSpeed);
         }
+    }
+
+    public void ChangeSkin(int skin)
+    {
+        GameManager.gameManager.currentSkin = skin;
+        this.GetComponent<SpriteRenderer>().sprite = playerSprites[skin];
+        this.GetComponent<Animator>().runtimeAnimatorController = playerControllers[skin];
+        SaveSystem.ss.SaveGame();
     }
 }

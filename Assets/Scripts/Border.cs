@@ -24,6 +24,7 @@ public class Border : MonoBehaviour
 
     public void MoveWithPlayer()
     {
-        transform.position += Vector3.right * Player.player.speed;
+        //transform.position += Vector3.right * Player.player.speed;
+        transform.position = new Vector3(Player.player.transform.position.x, transform.position.y, transform.position.z);
     }
 }

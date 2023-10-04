@@ -856,8 +856,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -88}
-  m_SizeDelta: {x: 623.4434, y: 0.0001}
+  m_AnchoredPosition: {x: 2.782, y: -92.0114}
+  m_SizeDelta: {x: 629.01, y: -8.0227}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &50059763
 MonoBehaviour:
@@ -942,7 +942,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 255.12402}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2219,7 +2219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.2597784, y: 0.7684845}
   m_AnchorMax: {x: 0.7448523, y: 0.9287791}
-  m_AnchoredPosition: {x: -5.2871094, y: 15.165344}
+  m_AnchoredPosition: {x: -5.2871094, y: 15.165405}
   m_SizeDelta: {x: -40.729492, y: 37.421204}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &284575784
@@ -2359,10 +2359,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152730394}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 953240585}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ChangeSkin
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2370,19 +2370,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 707231704}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &313213762
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3074,6 +3062,7 @@ GameObject:
   - component: {fileID: 431795065}
   - component: {fileID: 431795067}
   - component: {fileID: 431795066}
+  - component: {fileID: 431795068}
   m_Layer: 5
   m_Name: Text (TMP) (2)
   m_TagString: Untagged
@@ -3183,7 +3172,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: 271.1695}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3197,6 +3186,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 431795064}
   m_CullTransparentMesh: 1
+--- !u!114 &431795068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431795064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 624154900}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1646112525}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &435807988
 GameObject:
   m_ObjectHideFlags: 0
@@ -3248,7 +3293,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -4377,7 +4422,7 @@ GameObject:
   - component: {fileID: 553377801}
   - component: {fileID: 553377800}
   m_Layer: 5
-  m_Name: StatLenght
+  m_Name: StatLenghtBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4646,7 +4691,7 @@ GameObject:
   - component: {fileID: 581867490}
   - component: {fileID: 581867489}
   m_Layer: 5
-  m_Name: MoneyAmount
+  m_Name: RunMoneyAmount
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4692,7 +4737,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0420\u0443\u0431\u043B\u0435\u0439 \u0441\u043E\u0431\u0440\u0430\u043D\u043E:
+  m_text: "\u0413\u0430\u043B\u0435\u043E\u043D\u043E\u0432 \u0441\u043E\u0431\u0440\u0430\u043D\u043E:
     0"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b75d587f8c291174480370145631d10e, type: 2}
@@ -4801,8 +4846,8 @@ RectTransform:
   - {fileID: 435807989}
   - {fileID: 45828467}
   - {fileID: 2044442648}
-  - {fileID: 624154898}
   - {fileID: 1504206392}
+  - {fileID: 624154898}
   - {fileID: 1316400556}
   - {fileID: 50059762}
   - {fileID: 431795065}
@@ -5269,7 +5314,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 624154900}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1646112525}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: RestartGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &624154900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5801,7 +5858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.29753703, y: 0.11780551}
   m_AnchorMax: {x: 0.71761113, y: 0.67748743}
-  m_AnchoredPosition: {x: -6.991394, y: 3.5350952}
+  m_AnchoredPosition: {x: -6.991333, y: 3.5350342}
   m_SizeDelta: {x: -14.01709, y: -9.070007}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &661984224
@@ -8623,30 +8680,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152730394}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 953240585}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ChangeSkin
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 707231704}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &873670177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9437,11 +9482,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3f5b3e590621ae419629dae9005a86b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.1
+  speed: 5
   gravity: 0.02
   jumpSpeed: 5
   maxSpeed: 5
   accel: 0.5
+  playerSprites:
+  - {fileID: 21300000, guid: 02bfe62630f23d34db83b17e89659cce, type: 3}
+  - {fileID: 21300000, guid: f0e54a29623ac6047902c58c0dd6f0dc, type: 3}
+  - {fileID: 21300000, guid: 64d11462123704c47b1f93374597eafe, type: 3}
+  - {fileID: 21300000, guid: 032a128497786ab4fad4fcd1683f4802, type: 3}
+  playerControllers:
+  - {fileID: 9100000, guid: 68556249c9e6c214a979c049dd49fbc2, type: 2}
+  - {fileID: 9100000, guid: 96f43f8e73602dc4c8428a5fcf2a2820, type: 2}
+  - {fileID: 9100000, guid: 407643c8ebb8c314ca15116363334486, type: 2}
+  - {fileID: 9100000, guid: 07d0e4e509fad5a45b84b7dd43fbe177, type: 2}
   rb: {fileID: 0}
 --- !u!212 &953240586
 SpriteRenderer:
@@ -9511,7 +9566,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2.36}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!50 &953240588
@@ -9530,7 +9585,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 28ccbcd0aeb985241920cde1968f8e6b, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -10529,7 +10584,7 @@ GameObject:
   - component: {fileID: 1034004362}
   - component: {fileID: 1034004361}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StatLenght
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13088,7 +13143,7 @@ GameObject:
   - component: {fileID: 1262663315}
   - component: {fileID: 1262663314}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: StatMoney
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13196,7 +13251,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -159.17905, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -13681,7 +13736,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12576367, y: 0.1533326}
   m_AnchorMax: {x: 0.8937637, y: 0.90000004}
-  m_AnchoredPosition: {x: -1.5000229, y: -3.9999619}
+  m_AnchoredPosition: {x: -1.5000305, y: -3.9999695}
   m_SizeDelta: {x: 3.902298, y: 6.7406006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1322436572
@@ -14889,7 +14944,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14500001, y: 0.37}
   m_AnchorMax: {x: 0.86931384, y: 1}
-  m_AnchoredPosition: {x: -1.999939, y: 0.50899506}
+  m_AnchoredPosition: {x: -2, y: 0.50899506}
   m_SizeDelta: {x: -0.9993286, y: -0.98000336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1436887967
@@ -15384,7 +15439,7 @@ GameObject:
   - component: {fileID: 1480916220}
   - component: {fileID: 1480916219}
   m_Layer: 5
-  m_Name: StatMoney
+  m_Name: StatMoneyBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16868,7 +16923,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12576367, y: 0.1533326}
   m_AnchorMax: {x: 0.8937637, y: 0.90000004}
-  m_AnchoredPosition: {x: -1.4999771, y: -3.999977}
+  m_AnchoredPosition: {x: -1.4999695, y: -3.9999695}
   m_SizeDelta: {x: 3.902298, y: 6.7406006}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1566434402
@@ -16994,30 +17049,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152730394}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 953240585}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ChangeSkin
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 707231704}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &1568908015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17949,7 +17992,11 @@ MonoBehaviour:
   timeIterator: 0
   but: {fileID: 686776846}
   money: 0
-  endMenu: {fileID: 0}
+  runMoney: 0
+  record: 0
+  currentSkin: 0
+  endMenu: {fileID: 582573963}
+  dead: 0
 --- !u!4 &1646112526
 Transform:
   m_ObjectHideFlags: 0
@@ -18273,7 +18320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.02214815, y: 0.873741}
   m_AnchorMax: {x: 0.26500002, y: 0.9282591}
-  m_AnchoredPosition: {x: -7.49646, y: 0.5}
+  m_AnchoredPosition: {x: -7.496338, y: 0.5}
   m_SizeDelta: {x: 80.69116, y: 38.983276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1674944459
@@ -18953,30 +19000,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 152730394}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 953240585}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: ChangeSkin
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 1
-      - m_Target: {fileID: 707231704}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 1
+        m_CallState: 2
 --- !u!114 &1713515832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20123,7 +20158,7 @@ GameObject:
   - component: {fileID: 1846414616}
   - component: {fileID: 1846414615}
   m_Layer: 5
-  m_Name: StatMoney
+  m_Name: RunStatMoneyBackgroung
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

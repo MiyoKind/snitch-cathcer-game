@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -17,7 +19,11 @@ public class GameManager : MonoBehaviour
     Border upperBorder;
     public Hold but;
     public int money;
+    public int runMoney;
+    public int record;
+    public int currentSkin;
     public GameObject endMenu;
+    public bool dead = false;
     
 
     private void Awake()
@@ -26,27 +32,45 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        SaveSystem.ss.LoadGame();
         player = Player.player;
         enemyCreator = EnemyCreator.enemyCreator;
         lowerBorder = Border.lowerBorder;
         upperBorder = Border.upperBorder;
         Time.timeScale = 0;
+        player.ChangeSkin(currentSkin);
+        GameObject.Find("StatMoney").GetComponent<TextMeshProUGUI>().text = "Ваши галлеоны: " + money;
+        GameObject.Find("StatLenght").GetComponent<TextMeshProUGUI>().text = "Ваш рекорд: " + record + " М";
         timeIterator = Mathf.Exp(1);
+        dead = false;
     }
 
     public void StartGame()
     {
         Time.timeScale = 1;
-        //player.StartMoving();
+        player.StartMoving();
         startMenu.SetActive(false);
         gameplayMenu.SetActive(true);
+        but.GameObject().SetActive(true);
         InvokeRepeating("Accelerate", 1, 2);
+
     }
 
     public void EndGame()
     {
-        endMenu.SetActive(true); 
-        parallaxController.parallaxSpeed = 0;
+        endMenu.SetActive(true);
+        player.StopMoving();
+        but.GameObject().SetActive(false);
+        dead = true;
+        but.buttonPressed = false;
+        money += runMoney;
+        if ((int)player.transform.position.x > record)
+        {
+            record = (int)player.transform.position.x;
+        }
+        SaveSystem.ss.SaveGame();
+        //parallaxController.parallaxSpeed = 0;
+        //Player.player.rb.velocity = Vector2.right * Player.player.speed;
     }
 
     public void RestartGame()
@@ -56,11 +80,6 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        //foreach (Touch touch in Input.touches)
-        //{
-        //    player.Jump();
-        //}
-        player.MoveForward();
         CameraManager.camera.MoveCameraWithPlayer();
         enemyCreator.MoveWithPlayer();
         lowerBorder.MoveWithPlayer();
@@ -73,7 +92,10 @@ public class GameManager : MonoBehaviour
 
     public void Accelerate() //Ускорение по логарифмической функции 
     {
-        timeIterator += 0.1f;
-        Time.timeScale = Mathf.Log(timeIterator);
+        if (!dead)
+        {
+            timeIterator += 0.5f;
+            player.rb.velocity = new Vector2(Mathf.Log(timeIterator) * player.speed, player.rb.velocity.y);
+        }
     }
 }

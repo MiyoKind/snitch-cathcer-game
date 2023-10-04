@@ -32,7 +32,8 @@ public class EnemyCreator : MonoBehaviour
 
     public void MoveWithPlayer()
     {
-        transform.position = transform.position += Vector3.right * Player.player.speed;
+        //transform.position = transform.position += Vector3.right * Player.player.speed;
+        transform.position = new Vector3(Player.player.transform.position.x, transform.position.y, transform.position.z);
     }
 
     public void SpawnStaticEnemy()
