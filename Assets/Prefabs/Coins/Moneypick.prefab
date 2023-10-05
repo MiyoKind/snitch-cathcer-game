@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4754394218942152167}
   - component: {fileID: 4777395484190709830}
   - component: {fileID: 819131331258970002}
+  - component: {fileID: -7534438932839973585}
   m_Layer: 0
   m_Name: Moneypick
   m_TagString: Untagged
@@ -106,3 +107,15 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-7534438932839973585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7120710910738029931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d5bccd736d301944bc93e5d3398cb95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -120,9 +120,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.008090459}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.847891
 --- !u!114 &3580980797260004705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,8 +135,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d6a9d5851b49a84c8394e865af4376e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 0
   moneyPickAnimation: {fileID: 7120710910738029931, guid: 5ad9db70e34be7d47b3bd0d42f14b110, type: 3}
+  moneyText: {fileID: 0}
+  moneyAmount: 1
 --- !u!95 &4839343375372815765
 Animator:
   serializedVersion: 5

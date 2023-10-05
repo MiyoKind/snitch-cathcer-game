@@ -8,10 +8,13 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public int accelRate;
     public ParallaxController parallaxController;
     public static GameManager gameManager;
     public GameObject startMenu;
     public GameObject gameplayMenu;
+    public TextMeshProUGUI statMoney;
+    public TextMeshProUGUI statLength;
     public float timeIterator;
     Player player;
     EnemyCreator enemyCreator;
@@ -24,7 +27,6 @@ public class GameManager : MonoBehaviour
     public int currentSkin;
     public GameObject endMenu;
     public bool dead = false;
-    
 
     private void Awake()
     {
@@ -39,8 +41,8 @@ public class GameManager : MonoBehaviour
         upperBorder = Border.upperBorder;
         Time.timeScale = 0;
         player.ChangeSkin(currentSkin);
-        GameObject.Find("StatMoney").GetComponent<TextMeshProUGUI>().text = "Ваши галлеоны: " + money;
-        GameObject.Find("StatLenght").GetComponent<TextMeshProUGUI>().text = "Ваш рекорд: " + record + " М";
+        statMoney.text = "Ваши галлеоны: " + money;
+        statLength.text = "Ваш рекорд: " + record + " М";
         timeIterator = Mathf.Exp(1);
         dead = false;
     }
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
         startMenu.SetActive(false);
         gameplayMenu.SetActive(true);
         but.GameObject().SetActive(true);
-        InvokeRepeating("Accelerate", 1, 2);
+        InvokeRepeating("Accelerate", accelRate, accelRate);
 
     }
 
@@ -94,7 +96,7 @@ public class GameManager : MonoBehaviour
     {
         if (!dead)
         {
-            timeIterator += 0.5f;
+            timeIterator += 0.1f;
             player.rb.velocity = new Vector2(Mathf.Log(timeIterator) * player.speed, player.rb.velocity.y);
         }
     }

@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class EnemyCreator : MonoBehaviour
 {
+    public float enemyChance;
+    public float enemyBladjChance;
+    public float enemyRingChance;
+    public float coinChance;
+    public float snitchChance;
+    public float spawnRate;
     public static EnemyCreator enemyCreator;
     public float rightOffset;
     public GameObject enemy;
-    public GameObject enemyStatic;
+    public GameObject enemyBladj;
     public GameObject enemyRing;
     public GameObject coin;
+    public GameObject snitch;
     public GameObject[] figures;
     public float moveDelta;
     public float coinInterval;
@@ -26,10 +33,45 @@ public class EnemyCreator : MonoBehaviour
 
     private void Start()
     {
-        InvokeRepeating("SpawnEnemy", 0, 3);
-        InvokeRepeating("SpawnStaticEnemy", 7, 7);
-        InvokeRepeating("SpawnFigureCoins", 2, 7);
-        InvokeRepeating("SpawnRings", 3, 4);
+        InvokeRepeating("Spawn", 3, spawnRate);
+        //InvokeRepeating("SpawnEnemy", 0, 3);
+        //InvokeRepeating("SpawnBladj", 7, 7);
+        //InvokeRepeating("SpawnFigureCoins", 2, 7);
+        //InvokeRepeating("SpawnRings", 3, 4);
+    }
+
+    public void Spawn()
+    {
+        float seed = Random.value;
+        if (seed <= snitchChance)
+        {
+            SpawnSnitch();
+            return;
+        }
+        seed = Random.value;
+        if (seed <= coinChance)
+        {
+            SpawnFigureCoins();
+            return;
+        }
+        seed = Random.value;
+        if (seed <= enemyChance)
+        {
+            SpawnEnemy();
+            return;
+        }
+        seed = Random.value;
+        if (seed <= enemyRingChance)
+        {
+            SpawnRings();
+            return;
+        }
+        seed = Random.value;
+        if (seed <= enemyBladjChance)
+        {
+            SpawnBladj();
+            return;
+        }
     }
 
     public void MoveWithPlayer()
@@ -38,13 +80,12 @@ public class EnemyCreator : MonoBehaviour
         transform.position = new Vector3(Player.player.transform.position.x, transform.position.y, transform.position.z);
     }
 
-    public void SpawnStaticEnemy()
+    public void SpawnBladj()
     {
-        GameObject newEnemy = GameObject.Instantiate(enemyStatic);
-        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
+        GameObject newEnemy = GameObject.Instantiate(enemyBladj);
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height * (Random.value * 0.45f + 0.5f), 0));
         camPos.z = 0;
-        camPos.y += newEnemy.GetComponent<Collider2D>().bounds.size.y/2;
-        newEnemy.transform.position = camPos + Vector3.right * 5;
+        newEnemy.transform.position = camPos + Vector3.right * rightOffset;
     }
 
     public void SpawnRings()
@@ -53,29 +94,17 @@ public class EnemyCreator : MonoBehaviour
         //float h = Random.Range(0f, 0.1f);
         Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, -Screen.height, 0));
         camPos.z = 0;
-        camPos.y += newEnemy.GetComponent<Collider2D>().bounds.size.y / 2;
-        newEnemy.transform.position = camPos + Vector3.right * 5;
+        camPos.y += newEnemy.GetComponent<Collider2D>().bounds.size.y * (Random.value * 0.2f + 0.4f);
+        newEnemy.transform.position = camPos + Vector3.right * rightOffset;
     }
 
     public void SpawnEnemy()
     {
         GameObject newEnemy = GameObject.Instantiate(enemy);
-        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Random.value * Screen.height, 0));
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, (Random.value * 0.9f + 0.05f) * Screen.height, 0));
         camPos.z = 0;
-        newEnemy.transform.position = camPos + Vector3.right * 5;
+        newEnemy.transform.position = camPos + Vector3.right * rightOffset;
     }
-
-    //public void SpawnCoins()
-    //{
-    //    int amount = Random.Range(3, 10);
-    //    Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Random.value * Screen.height, 0));
-    //    camPos.z = 0;
-    //    for (int i = 0; i < amount; i++)
-    //    {
-    //        GameObject newCoin = GameObject.Instantiate(coin);
-    //        newCoin.transform.position = camPos + Vector3.right * i * coinInterval;
-    //    }
-    //}
 
     public void SpawnFigureCoins()
     {
@@ -91,7 +120,7 @@ public class EnemyCreator : MonoBehaviour
                 int randomIndex = Random.Range(0, figures.Length);
                 GameObject selectedFigure = figures[randomIndex];
                 GameObject newFigureCoin = GameObject.Instantiate(selectedFigure);
-                newFigureCoin.transform.position = camPos + Vector3.right * 5;
+                newFigureCoin.transform.position = camPos + Vector3.right * rightOffset;
             }
         }
         else if ((0.6f >= c) && (c > 0.2f))
@@ -102,11 +131,16 @@ public class EnemyCreator : MonoBehaviour
             for (int i = 0; i < amount; i++)
             {
                 GameObject newCoin = GameObject.Instantiate(coin);
-                newCoin.transform.position = camPos + Vector3.right * i * coinInterval;
+                newCoin.transform.position = camPos + Vector3.right * rightOffset + Vector3.right * i * coinInterval;
             }
         }
-        
-        //GameObject newFigureCoin = GameObject.Instantiate(figure);
-        //newFigureCoin.transform.position = camPos + Vector3.right * 5;
+    }
+
+    public void SpawnSnitch()
+    {
+        GameObject newEnemy = GameObject.Instantiate(snitch);
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, (Random.value * 0.9f + 0.05f) * Screen.height, 0));
+        camPos.z = 0;
+        newEnemy.transform.position = camPos + Vector3.right * rightOffset;
     }
 }
