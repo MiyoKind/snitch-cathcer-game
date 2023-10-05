@@ -17675,12 +17675,16 @@ MonoBehaviour:
   coinChance: 0.33
   snitchChance: 0.1
   spawnRate: 2
+  vergaChance: 0
+  FlappyBirdChance: 0
   rightOffset: 10
   enemy: {fileID: 7999475161683951246, guid: b25194697143d5744adbc062f8a0c9ba, type: 3}
   enemyBladj: {fileID: 7158630980904047275, guid: 70bccf3a45ed8a84e9fa0144770acbbc, type: 3}
   enemyRing: {fileID: 6138593730315895313, guid: 0c5408ef8a6ba0d41b6e161aa7054f22, type: 3}
   coin: {fileID: 337587574389284308, guid: 4f795207fc6452346ad4fe7d9ca05c85, type: 3}
   snitch: {fileID: 337587574389284308, guid: 0af2af6ea4b521e4587dcb9829aa15dd, type: 3}
+  vergaspell: {fileID: 337587574389284308, guid: 490b212805a6ce347afa0ab6ddefe42c, type: 3}
+  flappyBird: {fileID: 1826299148144398529, guid: ae027a2bc4362064b837b3532c5793fc, type: 3}
   figures:
   - {fileID: 2346037554205223277, guid: 6bcf2bd504897584a9c011b49164da57, type: 3}
   - {fileID: 4553191949585090585, guid: 19bf8c725e1b41f498d930cb4573c19b, type: 3}
