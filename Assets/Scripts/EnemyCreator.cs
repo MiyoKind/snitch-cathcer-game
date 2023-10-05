@@ -8,6 +8,7 @@ public class EnemyCreator : MonoBehaviour
     public float rightOffset;
     public GameObject enemy;
     public GameObject enemyStatic;
+    public GameObject enemyRing;
     public GameObject coin;
     public GameObject[] figures;
     public float moveDelta;
@@ -28,6 +29,7 @@ public class EnemyCreator : MonoBehaviour
         InvokeRepeating("SpawnEnemy", 0, 3);
         InvokeRepeating("SpawnStaticEnemy", 7, 7);
         InvokeRepeating("SpawnFigureCoins", 2, 7);
+        InvokeRepeating("SpawnRings", 3, 4);
     }
 
     public void MoveWithPlayer()
@@ -42,6 +44,16 @@ public class EnemyCreator : MonoBehaviour
         Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, 0, 0));
         camPos.z = 0;
         camPos.y += newEnemy.GetComponent<Collider2D>().bounds.size.y/2;
+        newEnemy.transform.position = camPos + Vector3.right * 5;
+    }
+
+    public void SpawnRings()
+    {
+        GameObject newEnemy = GameObject.Instantiate(enemyRing);
+        //float h = Random.Range(0f, 0.1f);
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, -Screen.height, 0));
+        camPos.z = 0;
+        camPos.y += newEnemy.GetComponent<Collider2D>().bounds.size.y / 2;
         newEnemy.transform.position = camPos + Vector3.right * 5;
     }
 
