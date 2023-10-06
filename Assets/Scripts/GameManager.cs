@@ -16,7 +16,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI statMoney;
     public TextMeshProUGUI statLength;
     public NormalMusic normal;
-    public AudioSource musicSource;
+    public AudioSource musicSourceGame;
+    public AudioSource musicSourceMenu;
     public float timeIterator;
     Player player;
     EnemyCreator enemyCreator;
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
     public int record;
     public int currentSkin;
     public GameObject endMenu;
+    public bool musicStatus;
     public bool dead = false;
 
     private void Awake()
@@ -47,7 +49,7 @@ public class GameManager : MonoBehaviour
         statLength.text = "Ваш рекорд: " + record + " М";
         timeIterator = Mathf.Exp(1);
         dead = false;
-        
+        musicStatus = true;
     }
 
     public void StartGame()
@@ -58,7 +60,8 @@ public class GameManager : MonoBehaviour
         gameplayMenu.SetActive(true);
         but.GameObject().SetActive(true);
         InvokeRepeating("Accelerate", accelRate, accelRate);
-
+        musicSourceGame.enabled = musicStatus;//
+        musicSourceMenu.enabled = musicStatus;
     }
 
     public void EndGame()
@@ -75,7 +78,7 @@ public class GameManager : MonoBehaviour
         }
         
         SaveSystem.ss.SaveGame();
-        musicSource.Stop();
+        musicSourceGame.Stop();
         //normal.StopMusicPlaying();
         //parallaxController.parallaxSpeed = 0;
         //Player.player.rb.velocity = Vector2.right * Player.player.speed;
@@ -84,6 +87,8 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        musicSourceGame.enabled = musicStatus;//
+        musicSourceMenu.enabled = musicStatus;
     }
 
     private void FixedUpdate()
@@ -92,10 +97,15 @@ public class GameManager : MonoBehaviour
         enemyCreator.MoveWithPlayer();
         lowerBorder.MoveWithPlayer();
         upperBorder.MoveWithPlayer();
+
+        musicSourceGame.enabled = musicStatus;
+        musicSourceMenu.enabled = musicStatus;
+
         if (but.buttonPressed)
         {
             player.Jump();
         }
+
     }
 
     public void Accelerate() //Ускорение по логарифмической функции 
@@ -105,5 +115,14 @@ public class GameManager : MonoBehaviour
             timeIterator += 0.1f;
             player.rb.velocity = new Vector2(Mathf.Log(timeIterator) * player.speed, player.rb.velocity.y);
         }
+    }
+
+    public void OnOffMusic() //Включение/выключение музыки
+    {
+        if (musicStatus) musicStatus = false;
+        else musicStatus = true;
+        musicSourceGame.enabled = musicStatus;//
+        musicSourceMenu.enabled = musicStatus;
+        Debug.Log(musicStatus);
     }
 }
