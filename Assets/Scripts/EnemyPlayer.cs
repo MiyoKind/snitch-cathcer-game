@@ -8,6 +8,7 @@ public class EnemyPlayer : EnemyBase
     public float vertSpeed;
     public int skin;
 
+
     public Sprite[] playerSprites;
     public RuntimeAnimatorController[] playerControllers;
 
