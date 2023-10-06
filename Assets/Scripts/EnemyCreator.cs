@@ -13,7 +13,7 @@ public class EnemyCreator : MonoBehaviour
     public static EnemyCreator enemyCreator;
     public float rightOffset;
     public GameObject enemy;
-    public GameObject enemyBladj;
+    public GameObject[] enemyBladj;
     public GameObject enemyRing;
     public GameObject coin;
     public GameObject snitch;
@@ -43,6 +43,11 @@ public class EnemyCreator : MonoBehaviour
     public void Spawn()
     {
         float seed = Random.value;
+        if (seed <= enemyBladjChance)
+        {
+            SpawnBladj();
+            return;
+        }
         if (seed <= snitchChance)
         {
             SpawnSnitch();
@@ -67,11 +72,11 @@ public class EnemyCreator : MonoBehaviour
             return;
         }
         seed = Random.value;
-        if (seed <= enemyBladjChance)
-        {
-            SpawnBladj();
-            return;
-        }
+        //if (seed <= enemyBladjChance)
+        //{
+        //    SpawnBladj();
+        //    return;
+        //}
     }
 
     public void MoveWithPlayer()
@@ -82,7 +87,9 @@ public class EnemyCreator : MonoBehaviour
 
     public void SpawnBladj()
     {
-        GameObject newEnemy = GameObject.Instantiate(enemyBladj);
+        int randomIndex = Random.Range(0, enemyBladj.Length);
+        GameObject selectedEnemy = enemyBladj[randomIndex];
+        GameObject newEnemy = GameObject.Instantiate(selectedEnemy);
         Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, Screen.height * (Random.value * 0.45f + 0.5f), 0));
         camPos.z = 0;
         newEnemy.transform.position = camPos + Vector3.right * rightOffset;

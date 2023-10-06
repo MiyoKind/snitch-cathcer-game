@@ -17669,15 +17669,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0a29fce5f7e2241a8f5f449be468c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyChance: 0.5
-  enemyBladjChance: 0.75
+  enemyChance: 0.75
+  enemyBladjChance: 0.5
   enemyRingChance: 0.5
   coinChance: 0.33
   snitchChance: 0.1
   spawnRate: 2
   rightOffset: 10
   enemy: {fileID: 7999475161683951246, guid: b25194697143d5744adbc062f8a0c9ba, type: 3}
-  enemyBladj: {fileID: 7158630980904047275, guid: 70bccf3a45ed8a84e9fa0144770acbbc, type: 3}
+  enemyBladj:
+  - {fileID: 4764310289757322563, guid: 3dceceab3bb9486418e3dcd477fc6bf2, type: 3}
+  - {fileID: 8107878653573208012, guid: 470542ee91c5ca44ab410cbe8c9758ac, type: 3}
+  - {fileID: 4544219096774063201, guid: 9e66da70da5c2604fb4fb2694300885f, type: 3}
+  - {fileID: 2813751242516045455, guid: c70bcec316ee6ea44a664a85f1ac4bc6, type: 3}
+  - {fileID: 4730168951733345702, guid: 98d6cbb2487ec304cad947c266c7cb09, type: 3}
+  - {fileID: 3790113139613877340, guid: f70569876812f9740a78bd7109e04bb6, type: 3}
+  - {fileID: 1733335659842835386, guid: d70da180974f2704f91f83b0e84b0e1c, type: 3}
+  - {fileID: 6843041959621521704, guid: 6db429492b234d64c9bd9db303362532, type: 3}
+  - {fileID: 1623286576619276771, guid: a495d72601d4b24498c9d88cbc552c03, type: 3}
+  - {fileID: 5975723462539393345, guid: c446a305222b02244914a6b44c5ff411, type: 3}
   enemyRing: {fileID: 6138593730315895313, guid: 0c5408ef8a6ba0d41b6e161aa7054f22, type: 3}
   coin: {fileID: 337587574389284308, guid: 4f795207fc6452346ad4fe7d9ca05c85, type: 3}
   snitch: {fileID: 337587574389284308, guid: 0af2af6ea4b521e4587dcb9829aa15dd, type: 3}
