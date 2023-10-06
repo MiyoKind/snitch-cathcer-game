@@ -10,6 +10,8 @@ public class EnemyCreator : MonoBehaviour
     public float coinChance;
     public float snitchChance;
     public float spawnRate;
+    public float vergaChance;
+    public float FlappyBirdChance;
     public static EnemyCreator enemyCreator;
     public float rightOffset;
     public GameObject enemy;
@@ -17,9 +19,12 @@ public class EnemyCreator : MonoBehaviour
     public GameObject enemyRing;
     public GameObject coin;
     public GameObject snitch;
+    public GameObject vergaspell;
+    public GameObject flappyBird;
     public GameObject[] figures;
     public float moveDelta;
     public float coinInterval;
+
     
 
     private void Awake()
@@ -51,6 +56,16 @@ public class EnemyCreator : MonoBehaviour
         if (seed <= snitchChance)
         {
             SpawnSnitch();
+            return;
+        }
+        if (seed <= vergaChance)
+        {
+            SpawnVergaSpell();
+            return;
+        }
+        if (seed < FlappyBirdChance)
+        {
+
             return;
         }
         seed = Random.value;
@@ -146,6 +161,22 @@ public class EnemyCreator : MonoBehaviour
     public void SpawnSnitch()
     {
         GameObject newEnemy = GameObject.Instantiate(snitch);
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, (Random.value * 0.9f + 0.05f) * Screen.height, 0));
+        camPos.z = 0;
+        newEnemy.transform.position = camPos + Vector3.right * rightOffset;
+    }
+
+    public void SpawnVergaSpell()
+    {
+        GameObject newEnemy = GameObject.Instantiate(vergaspell);
+        Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, (Random.value * 0.9f + 0.05f) * Screen.height, 0));
+        camPos.z = 0;
+        newEnemy.transform.position = camPos + Vector3.right * rightOffset;
+
+    }
+    public void SpawnFlappyBirdSpell()
+    {
+        GameObject newEnemy = GameObject.Instantiate(flappyBird);
         Vector3 camPos = Camera.main.ScreenToWorldPoint(new Vector3(Screen.width, (Random.value * 0.9f + 0.05f) * Screen.height, 0));
         camPos.z = 0;
         newEnemy.transform.position = camPos + Vector3.right * rightOffset;

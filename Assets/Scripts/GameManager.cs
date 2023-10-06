@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public GameObject gameplayMenu;
     public TextMeshProUGUI statMoney;
     public TextMeshProUGUI statLength;
+    public NormalMusic normal;
+    public AudioSource musicSource;
     public float timeIterator;
     Player player;
     EnemyCreator enemyCreator;
@@ -45,10 +47,11 @@ public class GameManager : MonoBehaviour
         statLength.text = "Ваш рекорд: " + record + " М";
         timeIterator = Mathf.Exp(1);
         dead = false;
+        
     }
 
     public void StartGame()
-    {
+    { 
         Time.timeScale = 1;
         player.StartMoving();
         startMenu.SetActive(false);
@@ -70,7 +73,10 @@ public class GameManager : MonoBehaviour
         {
             record = (int)player.transform.position.x;
         }
+        
         SaveSystem.ss.SaveGame();
+        musicSource.Stop();
+        //normal.StopMusicPlaying();
         //parallaxController.parallaxSpeed = 0;
         //Player.player.rb.velocity = Vector2.right * Player.player.speed;
     }
