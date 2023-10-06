@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Coin : EnemyBase
 {
-    //public AudioSource moneyPickAudio;
+    public AudioSource[] moneyPickAudio;
     public GameObject moneyPickAnimation;
     public TextMeshProUGUI moneyText;
 
@@ -25,7 +25,8 @@ public class Coin : EnemyBase
             GameManager.gameManager.runMoney += moneyAmount;
             Destroy(gameObject);
             Instantiate(moneyPickAnimation, transform.position, Quaternion.identity);
-            //moneyPickAudio.Play();
+            int randomIndex = Random.Range(0, moneyPickAudio.Length);
+            moneyPickAudio[randomIndex].Play();
             moneyText.text = "Галлеонов собрано: " + GameManager.gameManager.runMoney;
         }
     }

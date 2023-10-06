@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2352960392864453167, guid: 0af2af6ea4b521e4587dcb9829aa15dd, type: 3}
+      propertyPath: moneyPickAnimation
+      value: 
+      objectReference: {fileID: 1168225621295190014, guid: d545d11d933ec7a47ae97942838c573c, type: 3}
     - target: {fileID: 337587574389284308, guid: 0af2af6ea4b521e4587dcb9829aa15dd, type: 3}
       propertyPath: m_Name
       value: Snitch Variant
