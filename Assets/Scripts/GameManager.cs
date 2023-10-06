@@ -30,11 +30,11 @@ public class GameManager : MonoBehaviour
     public int record;
     public int currentSkin;
     public GameObject endMenu;
-    public bool musicStatus;
+    public bool musicStatus = false;
     public bool soundStatus;
     public bool dead = false;
-    public AudioSource[] audios; 
-
+    public AudioSource[] audios;
+    public Button soundButton;
 
     private void Awake()
     {
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
         timeIterator = Mathf.Exp(1);
         dead = false;
         OnOffMusic();
+
     }
 
     public void StartGame()
@@ -65,7 +66,7 @@ public class GameManager : MonoBehaviour
         gameplayMenu.SetActive(true);
         but.GameObject().SetActive(true);
         InvokeRepeating("Accelerate", accelRate, accelRate);
-
+        TurnOffAllSounds();
     }
 
     public void EndGame()
@@ -83,6 +84,7 @@ public class GameManager : MonoBehaviour
         
         SaveSystem.ss.SaveGame();
         musicSourceGame.Stop();
+        TurnOffAllSounds();
         //parallaxController.parallaxSpeed = 0;
         //Player.player.rb.velocity = Vector2.right * Player.player.speed;
     }
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
 
         musicSourceGame.enabled = musicStatus;
         musicSourceMenu.enabled = musicStatus;
+
 
         if (but.buttonPressed)
         {
@@ -138,6 +141,30 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.Save();
         SaveSystem.ss.SaveGame();
         Debug.Log("Music Status: " + musicStatus);
+    }
+
+    public void TurnOffAllSounds()
+    {
+
+        AudioSource[] allAudioSources = FindObjectsOfType<AudioSource>();
+
+        soundStatus = !soundStatus;
+        if (!soundStatus)
+        {
+            
+            
+            foreach (AudioSource audioSource in allAudioSources)
+            {
+                audioSource.enabled = false;
+            }
+        }
+        
+
+        // Сохранить состояние музыки в PlayerPrefs
+        PlayerPrefs.SetInt("MusicEnabled", soundStatus ? 1 : 0);
+        PlayerPrefs.Save();
+        SaveSystem.ss.SaveGame();
+        Debug.Log("Music Status: " + soundStatus);
     }
 
 }
