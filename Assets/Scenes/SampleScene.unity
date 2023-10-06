@@ -2665,7 +2665,7 @@ GameObject:
   - component: {fileID: 490037041}
   - component: {fileID: 490037040}
   m_Layer: 5
-  m_Name: SkinIcon (4)
+  m_Name: SkinIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6273,6 +6273,7 @@ GameObject:
   - component: {fileID: 873670178}
   - component: {fileID: 873670177}
   - component: {fileID: 873670176}
+  - component: {fileID: 873670179}
   m_Layer: 5
   m_Name: SkinButton (3)
   m_TagString: Untagged
@@ -6346,10 +6347,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953240585}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChangeSkin
-        m_Mode: 3
+      - m_Target: {fileID: 873670179}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6357,7 +6358,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &873670177
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6396,6 +6397,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873670174}
   m_CullTransparentMesh: 1
+--- !u!114 &873670179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873670174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4290165307b132459c2a6a99697bb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 0
+  skinImg: {fileID: 0}
+  balance: {fileID: 1098975479}
+  gameManager: {fileID: 1646112525}
+  player: {fileID: 953240585}
+  fog: {fileID: 775371851}
+  buyButton: {fileID: 1568908012}
+  cost: 1000
+  skinNum: 2
 --- !u!1 &886890715
 GameObject:
   m_ObjectHideFlags: 0
@@ -8458,16 +8480,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1098975477}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4290165307b132459c2a6a99697bb6f, type: 3}
+  m_Script: {fileID: 11500000, guid: bb81a474162e2ba4bafc5018629f62cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  balance: {fileID: 1098975479}
-  gameManager: {fileID: 1646112525}
-  player: {fileID: 0}
-  fog: {fileID: 0}
-  buyButton: {fileID: 0}
-  cost: 0
-  skinNum: 0
 --- !u!1 &1100914325
 GameObject:
   m_ObjectHideFlags: 0
@@ -9618,7 +9633,7 @@ GameObject:
   - component: {fileID: 1206454652}
   - component: {fileID: 1206454651}
   m_Layer: 5
-  m_Name: fog (1)
+  m_Name: fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11701,7 +11716,7 @@ GameObject:
   - component: {fileID: 1495045490}
   - component: {fileID: 1495045489}
   m_Layer: 5
-  m_Name: SkinIcon (3)
+  m_Name: SkinIcon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13121,12 +13136,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4290165307b132459c2a6a99697bb6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBought: 0
+  skinImg: {fileID: 0}
   balance: {fileID: 1098975479}
   gameManager: {fileID: 1646112525}
   player: {fileID: 953240585}
-  fog: {fileID: 775371850}
+  fog: {fileID: 775371851}
   buyButton: {fileID: 1568908012}
-  cost: 10
+  cost: 50
   skinNum: 3
 --- !u!1 &1575009682
 GameObject:
@@ -13906,6 +13923,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   accelRate: 4
+  shops:
+  - {fileID: 1568908017}
+  - {fileID: 1713515834}
+  - {fileID: 873670179}
   parallaxController: {fileID: 0}
   startMenu: {fileID: 794923688}
   gameplayMenu: {fileID: 544092455}
@@ -14523,6 +14544,7 @@ GameObject:
   - component: {fileID: 1713515833}
   - component: {fileID: 1713515832}
   - component: {fileID: 1713515831}
+  - component: {fileID: 1713515834}
   m_Layer: 5
   m_Name: SkinButton (2)
   m_TagString: Untagged
@@ -14596,10 +14618,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 953240585}
-        m_TargetAssemblyTypeName: Player, Assembly-CSharp
-        m_MethodName: ChangeSkin
-        m_Mode: 3
+      - m_Target: {fileID: 1713515834}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: Buy
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14607,7 +14629,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1713515832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14646,6 +14668,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713515829}
   m_CullTransparentMesh: 1
+--- !u!114 &1713515834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1713515829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4290165307b132459c2a6a99697bb6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isBought: 0
+  skinImg: {fileID: 0}
+  balance: {fileID: 1098975479}
+  gameManager: {fileID: 1646112525}
+  player: {fileID: 953240585}
+  fog: {fileID: 775371851}
+  buyButton: {fileID: 1713515829}
+  cost: 250
+  skinNum: 1
 --- !u!1 &1738477554
 GameObject:
   m_ObjectHideFlags: 0
@@ -16646,7 +16689,7 @@ GameObject:
   - component: {fileID: 2025996949}
   - component: {fileID: 2025996948}
   m_Layer: 5
-  m_Name: fog (3)
+  m_Name: fog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,10 +10,12 @@ public class SaveSystem : MonoBehaviour
 {
     int money;
     public static SaveSystem ss;
+    //public GameManager gameManager;
 
     private void Awake()
     {
         ss = GetComponent<SaveSystem>();
+        //gameManager = GameManager.gameManager;
     }
     public void SaveGame()
     {
@@ -24,6 +26,14 @@ public class SaveSystem : MonoBehaviour
         data.savedMoney = GameManager.gameManager.money;
         data.record = GameManager.gameManager.record;
         data.currentSkin = GameManager.gameManager.currentSkin;
+        data.soundStatus = GameManager.gameManager.soundStatus;
+        data.musicStatus = GameManager.gameManager.musicStatus;
+        bool[] bght = new bool[GameManager.gameManager.shops.Length];
+        for (int i = 0; i < bght.Length; i++)
+        {
+            bght[i] = GameManager.gameManager.shops[i].isBought;
+        }
+        data.boughtSkins = bght;
         bf.Serialize(file, data);
         file.Close();
         Debug.Log("Game data saved!");
@@ -43,6 +53,12 @@ public class SaveSystem : MonoBehaviour
             GameManager.gameManager.money = data.savedMoney;
             GameManager.gameManager.record = data.record;
             GameManager.gameManager.currentSkin = data.currentSkin;
+            GameManager.gameManager.soundStatus = data.soundStatus;
+            GameManager.gameManager.musicStatus = data.musicStatus;
+            for (int i = 0; i < data.boughtSkins.Length; i++)
+            {
+                GameManager.gameManager.shops[i].isBought = data.boughtSkins[i];
+            }
             Debug.Log("Game data loaded!");
         }
         else
@@ -56,4 +72,8 @@ class SaveData
     public int savedMoney;
     public int record;
     public int currentSkin;
+    public bool[] boughtSkins;
+    public bool firstLaunch;
+    public bool musicStatus;
+    public bool soundStatus;
 }

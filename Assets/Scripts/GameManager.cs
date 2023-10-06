@@ -9,6 +9,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int accelRate;
+    public ShopManager[] shops;
     public ParallaxController parallaxController;
     public static GameManager gameManager;
     public GameObject startMenu;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     public int currentSkin;
     public GameObject endMenu;
     public bool musicStatus;
+    public bool soundStatus;
     public bool dead = false;
 
     private void Awake()
@@ -38,6 +40,7 @@ public class GameManager : MonoBehaviour
     }
     private void Start()
     {
+        //Debug.Log(Application.persistentDataPath);
         SaveSystem.ss.LoadGame();
         player = Player.player;
         enemyCreator = EnemyCreator.enemyCreator;
@@ -123,6 +126,7 @@ public class GameManager : MonoBehaviour
         else musicStatus = true;
         musicSourceGame.enabled = musicStatus;//
         musicSourceMenu.enabled = musicStatus;
+        SaveSystem.ss.SaveGame();
         Debug.Log(musicStatus);
     }
 }
