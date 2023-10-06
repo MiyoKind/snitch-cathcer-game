@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour
     public bool musicStatus;
     public bool soundStatus;
     public bool dead = false;
+    public AudioSource[] audios; 
+
 
     private void Awake()
     {
@@ -52,7 +54,7 @@ public class GameManager : MonoBehaviour
         statLength.text = "Ваш рекорд: " + record + " М";
         timeIterator = Mathf.Exp(1);
         dead = false;
-        musicStatus = true;
+        OnOffMusic();
     }
 
     public void StartGame()
@@ -63,8 +65,7 @@ public class GameManager : MonoBehaviour
         gameplayMenu.SetActive(true);
         but.GameObject().SetActive(true);
         InvokeRepeating("Accelerate", accelRate, accelRate);
-        musicSourceGame.enabled = musicStatus;//
-        musicSourceMenu.enabled = musicStatus;
+
     }
 
     public void EndGame()
@@ -82,7 +83,6 @@ public class GameManager : MonoBehaviour
         
         SaveSystem.ss.SaveGame();
         musicSourceGame.Stop();
-        //normal.StopMusicPlaying();
         //parallaxController.parallaxSpeed = 0;
         //Player.player.rb.velocity = Vector2.right * Player.player.speed;
     }
@@ -90,8 +90,6 @@ public class GameManager : MonoBehaviour
     public void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        musicSourceGame.enabled = musicStatus;//
-        musicSourceMenu.enabled = musicStatus;
     }
 
     private void FixedUpdate()
@@ -120,13 +118,26 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void OnOffMusic() //Включение/выключение музыки
+    public void OnOffMusic() // Включение/выключение музыки
     {
-        if (musicStatus) musicStatus = false;
-        else musicStatus = true;
-        musicSourceGame.enabled = musicStatus;//
-        musicSourceMenu.enabled = musicStatus;
+        musicStatus = !musicStatus;
+
+        if (musicStatus)
+        {
+            musicSourceGame.Play(); // Включить музыку
+            musicSourceMenu.Play(); // Включить музыку
+        }
+        else
+        {
+            musicSourceGame.Stop(); // Выключить музыку
+            musicSourceMenu.Stop(); // Выключить музыку
+        }
+
+        // Сохранить состояние музыки в PlayerPrefs
+        PlayerPrefs.SetInt("MusicEnabled", musicStatus ? 1 : 0);
+        PlayerPrefs.Save();
         SaveSystem.ss.SaveGame();
-        Debug.Log(musicStatus);
+        Debug.Log("Music Status: " + musicStatus);
     }
+
 }

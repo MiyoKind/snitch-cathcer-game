@@ -55,6 +55,9 @@ public class SaveSystem : MonoBehaviour
             GameManager.gameManager.currentSkin = data.currentSkin;
             GameManager.gameManager.soundStatus = data.soundStatus;
             GameManager.gameManager.musicStatus = data.musicStatus;
+
+            GameManager.gameManager.OnOffMusic();
+
             for (int i = 0; i < data.boughtSkins.Length; i++)
             {
                 GameManager.gameManager.shops[i].isBought = data.boughtSkins[i];

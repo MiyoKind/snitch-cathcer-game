@@ -3453,7 +3453,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 471654a028ddc8046926f0185383e1e7, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 508894a06c0c67d45ac9f8ebbbae488b, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.086
   m_Pitch: 1
@@ -6416,6 +6416,7 @@ MonoBehaviour:
   player: {fileID: 953240585}
   fog: {fileID: 775371851}
   buyButton: {fileID: 1568908012}
+  price: {fileID: 0}
   cost: 1000
   skinNum: 2
 --- !u!1 &886890715
@@ -13143,6 +13144,7 @@ MonoBehaviour:
   player: {fileID: 953240585}
   fog: {fileID: 775371851}
   buyButton: {fileID: 1568908012}
+  price: {fileID: 0}
   cost: 50
   skinNum: 3
 --- !u!1 &1575009682
@@ -13943,7 +13945,9 @@ MonoBehaviour:
   currentSkin: 0
   endMenu: {fileID: 582573963}
   musicStatus: 1
+  soundStatus: 0
   dead: 0
+  audios: []
 --- !u!4 &1646112526
 Transform:
   m_ObjectHideFlags: 0
@@ -14687,6 +14691,7 @@ MonoBehaviour:
   player: {fileID: 953240585}
   fog: {fileID: 775371851}
   buyButton: {fileID: 1713515829}
+  price: {fileID: 0}
   cost: 250
   skinNum: 1
 --- !u!1 &1738477554
