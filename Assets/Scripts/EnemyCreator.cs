@@ -48,24 +48,10 @@ public class EnemyCreator : MonoBehaviour
     public void Spawn()
     {
         float seed = Random.value;
-        if (seed <= enemyBladjChance)
-        {
-            SpawnBladj();
-            return;
-        }
+        seed = Random.value;
         if (seed <= snitchChance)
         {
             SpawnSnitch();
-            return;
-        }
-        if (seed <= vergaChance)
-        {
-            SpawnVergaSpell();
-            return;
-        }
-        if (seed < FlappyBirdChance)
-        {
-
             return;
         }
         seed = Random.value;
@@ -87,11 +73,11 @@ public class EnemyCreator : MonoBehaviour
             return;
         }
         seed = Random.value;
-        //if (seed <= enemyBladjChance)
-        //{
-        //    SpawnBladj();
-        //    return;
-        //}
+        if (seed <= enemyBladjChance)
+        {
+            SpawnBladj();
+            return;
+        }
     }
 
     public void MoveWithPlayer()

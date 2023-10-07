@@ -4207,33 +4207,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 694458188}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 596326995}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1646112525}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TurnOffAllSounds
+        m_MethodName: MusicController
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5183,7 +5159,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1646112525}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: TurnOffAllSounds
+        m_MethodName: MusicController
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7704,7 +7680,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.27053708, y: 0.87100005}
   m_AnchorMax: {x: 0.3242223, y: 0.98100007}
-  m_AnchoredPosition: {x: 1.4000244, y: -2.6000977}
+  m_AnchoredPosition: {x: 1.3999023, y: -2.6000977}
   m_SizeDelta: {x: 22.11731, y: 15.234985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &956388686
@@ -13749,7 +13725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1552882197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15133,14 +15109,13 @@ MonoBehaviour:
   record: 0
   currentSkin: 0
   endMenu: {fileID: 582573963}
+  soundStatus: 0
   musicStatus: 1
-  soundStatus: 1
   dead: 0
   audios:
   - {fileID: 1547155966}
   - {fileID: 2060304575}
   - {fileID: 582573965}
-  soundButton: {fileID: 694458192}
 --- !u!4 &1646112526
 Transform:
   m_ObjectHideFlags: 0
@@ -15268,7 +15243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.02214815, y: 0.873741}
   m_AnchorMax: {x: 0.26500002, y: 0.9282591}
-  m_AnchoredPosition: {x: -7.496582, y: 0.5}
+  m_AnchoredPosition: {x: -7.496704, y: 0.5}
   m_SizeDelta: {x: 80.69116, y: 38.983276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1678459422
@@ -18957,7 +18932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2099662236
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19338,11 +19313,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd0a29fce5f7e2241a8f5f449be468c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyChance: 0.75
-  enemyBladjChance: 0.5
-  enemyRingChance: 0.5
+  enemyChance: 0.5
+  enemyBladjChance: 0.75
+  enemyRingChance: 0.65
   coinChance: 0.33
-  snitchChance: 0
+  snitchChance: 0.1
   spawnRate: 2
   vergaChance: 0
   FlappyBirdChance: 0
@@ -19361,7 +19336,7 @@ MonoBehaviour:
   - {fileID: 5975723462539393345, guid: c446a305222b02244914a6b44c5ff411, type: 3}
   enemyRing: {fileID: 6138593730315895313, guid: 0c5408ef8a6ba0d41b6e161aa7054f22, type: 3}
   coin: {fileID: 337587574389284308, guid: 4f795207fc6452346ad4fe7d9ca05c85, type: 3}
-  snitch: {fileID: 5703556346164546567, guid: 26a5a61f287414b4cbd381d6d69dedc2, type: 3}
+  snitch: {fileID: 337587574389284308, guid: 0af2af6ea4b521e4587dcb9829aa15dd, type: 3}
   vergaspell: {fileID: 337587574389284308, guid: 490b212805a6ce347afa0ab6ddefe42c, type: 3}
   flappyBird: {fileID: 1826299148144398529, guid: ae027a2bc4362064b837b3532c5793fc, type: 3}
   figures:
@@ -19369,7 +19344,6 @@ MonoBehaviour:
   - {fileID: 4553191949585090585, guid: 19bf8c725e1b41f498d930cb4573c19b, type: 3}
   - {fileID: 4939274946506302270, guid: 5ea278fc8058c774ab1cd6aadd264410, type: 3}
   - {fileID: 1835304720724413205, guid: 71d11b8a67f11f44895f4cf741860336, type: 3}
-  - {fileID: 7535949239287698512, guid: 8d770e04198757d438076c907b52d291, type: 3}
   - {fileID: 4310066107346151573, guid: c3b500c742715654caa02dd8f4ae6b3a, type: 3}
   - {fileID: 6393060554993696501, guid: a0d7137df0db7ba4388183a22c11c926, type: 3}
   - {fileID: 4374555352442085522, guid: 693ccb48e78e93d44b78a991e43b797e, type: 3}

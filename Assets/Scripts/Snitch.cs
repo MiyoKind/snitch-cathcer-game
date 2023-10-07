@@ -20,7 +20,13 @@ public class Snitch : Coin
     }
     public override void OnTriggerEnter2D(Collider2D collision)
     {
-        base.OnTriggerEnter2D(collision);
+        if (collision.tag == "Player")
+        {
+            GameManager.gameManager.runMoney += moneyAmount;
+            Destroy(gameObject);
+            Instantiate(moneyPickAnimation, transform.position, Quaternion.identity);
+            moneyText.text = "Галлеонов собрано: " + GameManager.gameManager.runMoney;
+        }
         if (collision.name == "LowerBorder")
         {
             rb.velocity = new Vector2(rb.velocity.x, speed);

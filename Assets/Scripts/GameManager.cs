@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
         audios = FindObjectsOfType<AudioSource>();
 
         musicStatus = !musicStatus;
+        SaveSystem.ss.SaveGame();
         
         if (!musicStatus)
         {
@@ -134,8 +135,13 @@ public class GameManager : MonoBehaviour
                 audio.enabled = false;
             }
         }
-
-
+        else
+        {
+            foreach (AudioSource audio in audios)
+            {
+                audio.enabled = true;
+            }
+        }
     }
 
 

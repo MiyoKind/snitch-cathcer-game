@@ -26,7 +26,7 @@ public class SaveSystem : MonoBehaviour
         data.savedMoney = GameManager.gameManager.money;
         data.record = GameManager.gameManager.record;
         data.currentSkin = GameManager.gameManager.currentSkin;
-        data.soundStatus = GameManager.gameManager.soundStatus;
+        //data.soundStatus = GameManager.gameManager.soundStatus;
         data.musicStatus = GameManager.gameManager.musicStatus;
         bool[] bght = new bool[GameManager.gameManager.shops.Length];
         for (int i = 0; i < bght.Length; i++)
@@ -53,7 +53,7 @@ public class SaveSystem : MonoBehaviour
             GameManager.gameManager.money = data.savedMoney;
             GameManager.gameManager.record = data.record;
             GameManager.gameManager.currentSkin = data.currentSkin;
-            GameManager.gameManager.soundStatus = data.soundStatus;
+            //GameManager.gameManager.soundStatus = data.soundStatus;
             GameManager.gameManager.musicStatus = data.musicStatus;
 
 
@@ -77,5 +77,5 @@ class SaveData
     public bool[] boughtSkins;
     public bool firstLaunch;
     public bool musicStatus;
-    public bool soundStatus;
+    //public bool soundStatus;
 }
