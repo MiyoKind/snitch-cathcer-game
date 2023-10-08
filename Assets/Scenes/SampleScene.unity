@@ -4023,6 +4023,7 @@ GameObject:
   - component: {fileID: 596326998}
   - component: {fileID: 596326997}
   - component: {fileID: 596326999}
+  - component: {fileID: 596327000}
   m_Layer: 5
   m_Name: SoundsIcon
   m_TagString: Untagged
@@ -4143,6 +4144,32 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 596327000}
+        m_TargetAssemblyTypeName: MuteButton, Assembly-CSharp
+        m_MethodName: IconCheck
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &596327000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 596326995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9345e14425bdf9844897ce33d3cd8a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unmuted: {fileID: 21300000, guid: dac7f7fd536a017418911b9b3a59faf9, type: 3}
+  muted: {fileID: 21300000, guid: e0d78a3ae07691344b6dd595bd5ac7f9, type: 3}
 --- !u!1 &601481136
 GameObject:
   m_ObjectHideFlags: 0
@@ -13247,6 +13274,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1547155965}
   - component: {fileID: 1547155966}
+  - component: {fileID: 1547155968}
+  - component: {fileID: 1547155967}
   m_Layer: 5
   m_Name: MenuMusic
   m_TagString: Untagged
@@ -13287,7 +13316,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.2
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -13369,6 +13398,30 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1547155967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547155964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dbe98e3c22e61e48af26be7e2b35725, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1547155968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547155964}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf8d8dc0158de384cac86354e0196e62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1548043287
 GameObject:
   m_ObjectHideFlags: 0
@@ -18032,8 +18085,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2060304574}
-  - component: {fileID: 2060304576}
   - component: {fileID: 2060304575}
+  - component: {fileID: 2060304576}
   m_Layer: 5
   m_Name: GameplayMusic
   m_TagString: Untagged
@@ -18163,9 +18216,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2060304573}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dbe98e3c22e61e48af26be7e2b35725, type: 3}
+  m_Script: {fileID: 11500000, guid: bf8d8dc0158de384cac86354e0196e62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &2078606337

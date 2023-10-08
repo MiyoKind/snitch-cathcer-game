@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         statLength.text = "Ваш рекорд: " + record + " М";
         timeIterator = Mathf.Exp(1);
         dead = false;
-
+        MusicCheck();
     }
 
     public void StartGame()
@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         gameplayMenu.SetActive(true);
         but.GameObject().SetActive(true);
         InvokeRepeating("Accelerate", accelRate, accelRate);
-
+        MusicCheck();
     }
 
     public void EndGame()
@@ -144,5 +144,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
+    public void MusicCheck()
+    {
+        if (!musicStatus)
+        {
+            foreach (AudioSource audio in audios)
+            {
+                audio.enabled = false;
+            }
+        }
+        else
+        {
+            foreach (AudioSource audio in audios)
+            {
+                audio.enabled = true;
+            }
+        }
+    }
 }
